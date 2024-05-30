@@ -4,6 +4,18 @@
   box-sizing: border-box;
 }
 
+.filter {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter input {
+  padding: 0.3rem;
+}
+
 #pform {
   display: flex;
   flex-direction: column;
@@ -23,6 +35,7 @@
 #Phonebook {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
   margin: 1rem;
 }
@@ -32,6 +45,32 @@
   justify-content: baseline;
   align-items: baseline;
   gap: 1rem;
+}
+
+#pform button {
+  width: 200px;
+  margin: auto;
+  padding: 0.2rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.notify {
+  border: 2px solid green;
+  color: green;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
+}
+
+.error {
+  border: 2px solid red;
+  color: red;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  padding: 0.3rem;
 }
 
 #phonelist {

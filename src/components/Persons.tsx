@@ -6,15 +6,27 @@ type PersonsProp = {
     filteredList: () => Array<Person>;
     persons: Array<Person>;
     setPersons: Function;
+    msgType: string;
+    content: string;
+    showNotification: boolean;
+    setShowNotification: Function;
+    setMessage: Function;
 }
 
-export default function Persons({ filteredList, persons, setPersons }: PersonsProp) {
+export default function Persons({ filteredList, persons, setPersons, msgType, content, showNotification, setShowNotification, setMessage }: PersonsProp) {
     const handleDelete = (id: Number, name: string) => {
         confirm(`Delete ${name}?`)
         contactService
             .deleteContact(id)
             .then(() => {
                 setPersons(persons.filter(person => person.id !== id))
+                setMessage({ msgType: 'notify', content: `contact details of ${name} has been removed` })
+                setShowNotification(true)
+                setTimeout(() => {
+                    setMessage({ msgType: "", content: "" })
+                    setShowNotification(false)
+                }, 3000)
+
             })
             .catch(err => console.log(err))
     }
