@@ -30,7 +30,7 @@ export default function App() {
     return persons.filter(person => person.name.toLowerCase().includes(filterby.toLowerCase()))
 
   }
-  function toastDetails(messageType, message) {
+  function toastDetails(messageType: string, message: string) {
     setMessage({ msgType: messageType, content: message })
     setShowNotification(true)
     setTimeout(() => {
